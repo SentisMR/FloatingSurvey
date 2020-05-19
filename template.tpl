@@ -83,6 +83,14 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "type": "TEXT",
+        "name": "completed",
+        "displayName": "Completed Text",
+        "simpleValueType": true,
+        "help": "Call to action text upon survey complete",
+        "defaultValue": "Thank You!"
+      },
+      {
+        "type": "TEXT",
         "name": "backgroundColor",
         "displayName": "Floating Window Colour",
         "help": "Specify a custom background colour for the floating window. Note: Does apply to the survey template inside IFrame",
