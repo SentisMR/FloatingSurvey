@@ -93,14 +93,14 @@ ___TEMPLATE_PARAMETERS___
         "type": "TEXT",
         "name": "backgroundColor",
         "displayName": "Floating Window Colour",
-        "help": "Specify a custom background colour for the floating window. Note: Does apply to the survey template inside IFrame",
+        "help": "Specify a custom background colour for the floating window. Note: Does not apply to the survey template inside IFrame",
         "simpleValueType": true
       },
       {
         "type": "TEXT",
         "name": "fontFamily",
         "displayName": "Floating Window Font Family",
-        "help": "Specify a custom font for the floating window. Note: Does apply to the survey template inside IFrame",
+        "help": "Specify a custom font for the floating window. Note: Does not apply to the survey template inside IFrame",
         "simpleValueType": true
       },
       {
