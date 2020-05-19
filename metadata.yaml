@@ -1,0 +1,5 @@
+homepage: "https://sentisresearch.com"
+documentation: "https://sentisresearch.com"
+versions:
+  - sha: 2a8e9819cb600e0266b0ae4f8dd5684e3da85b78
+    changeNotes: Initial release.
