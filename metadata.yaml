@@ -2,8 +2,10 @@ homepage: "https://sentisresearch.com"
 documentation: "https://sentisresearch.com"
 versions:
     # Latest version
+  - sha: 281463751a2a4e39dacb3fdee0d3732780103457
+    changeNotes: Added required terms of service
+    # Older versions
   - sha: 5ef2f3b71c9ab5026741e6179ea57fc9a885bef5
     changeNotes: Corrected template file name.
-    # Older versions
   - sha: 2a8e9819cb600e0266b0ae4f8dd5684e3da85b78
     changeNotes: Initial release.
