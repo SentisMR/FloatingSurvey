@@ -12,7 +12,7 @@ Note: if your developers have already integrated the google tag manager workspac
 -	Create a new GTM account by entering an appropriate name and selecting Canada under the country dropdown:
 -	Enter a name under container setup and select web. We recommend using a name that represents the environment and domain that will be hosting the floating survey, ex: staging.acme.com.
 -	Press create and read & accept the terms of service.
--	Copy the scripts from the popup and supply these to your developer/site maintainer to add to your website. This script allows your site to load the contents of a tag that is managed in the google tag manager portal. (Example scripts below): 
+-	Copy the scripts from the popup and supply these to your developer/site maintainer to add to your website. This script allows your site to load the contents of a tag that is managed in the google tag manager portal. 
 -	After pressing OK, you should now see your new Tag Manager Workspace.
 
 ### Step 2: Importing our Tag Template
