@@ -16,14 +16,21 @@ Note: if your developers have already integrated the google tag manager workspac
 -	After pressing OK, you should now see your new Tag Manager Workspace.
 
 ### Step 2: Importing our Tag Template
-Now that we have our workspace, the first thing we will do is import the Floating Survey Template. If a template file has not been provided, it can be retrieved from: https://github.com/SentisMR/FloatingSurvey
+
+Now that we have our workspace, the first thing we will do is import the Floating Survey Template. If a template file has not been provided, it can be retrieved from: https://github.com/SentisMR/FloatingSurvey.
+
+Start by selecting Templates from the side menu. Under “Tag Templates” create a new template.
+ 
+Import the Floating Survey Template (expand the top right corner menu and select import). 
+
 If you are self-hosting the floating survey package, you will need to edit the imported template and add the location of the script under the “Injects Scripts” permissions. If you are not self-hosting the assets, the default Sentis CDN will be used.
+Save the template. 
 
 ### Step 3: Creating our trigger
 Start by selecting triggers from the side menu and press “New”. Click the trigger configuration to select from a list of default events to subscribe to. For our use case, we will select DOM Ready. This will ensure our tag is only loaded once your website is ready to go.
 If you would like the floating survey to be available on all pages that your developers have made the Google Tab Script available on, select “All DOM Ready Events”. If you would like to be more specific about where the floating survey is available, select “Some DOM Ready Events” and specify your filters. ex: Page URL equals https://acme.com/info would make the Floating Survey available only on the /info page. You can find out more details about triggers here: https://support.google.com/tagmanager/answer/7679316?hl=en/
 
-### Step 4: Creating our TagK
+### Step 4: Creating our Tag
 Select “Tags” in the side menu of your workspace and press “New”. 
 In the editor popup, specify a name for the new tag. ex. Website Evaluation Survey. Once you have your name, click the “Tag Configuration” area and scroll down until you see the “Custom” section that should contain our previously imported Floating Survey tag and select it.
 Enter the configuration details provided by Sentis for the survey being deployed. The only required values are Survey ID and Survey URL.  NOTE: You must provide Sentis with the domain for the site that will be hosting the floating survey. This domain must be added in the survey settings to set the required request headers related to the iFrame permissions. Your tag will not work unless this value is set.
