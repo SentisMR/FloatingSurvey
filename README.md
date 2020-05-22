@@ -20,8 +20,6 @@ Import the Sentis Floating Survey template from the Google Tag Manager Community
 
 If successful, the template should be available for use in the Tag Templates section. You can now deploy your survey using the template.
 
-The template displays in the template list.
-
 ## Google Tag Fields
 
 | Name| Type | Required | Default Value | Description |
