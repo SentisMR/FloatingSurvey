@@ -13,7 +13,9 @@ ___INFO___
   "version": 1,
   "securityGroups": [],
   "displayName": "Sentis Floating Survey",
-  "categories": ["SURVEY"],
+  "categories": [
+    "SURVEY"
+  ],
   "brand": {
     "id": "brand_dummy",
     "displayName": "",
@@ -24,6 +26,7 @@ ___INFO___
     "WEB"
   ]
 }
+
 
 ___TEMPLATE_PARAMETERS___
 
@@ -57,6 +60,13 @@ ___TEMPLATE_PARAMETERS___
         "valueValidators": [
           {
             "type": "NON_EMPTY"
+          },
+          {
+            "type": "REGEX",
+            "args": [
+              "^(https:\\/\\/).*"
+            ],
+            "errorMessage": "URL must start with https://"
           }
         ],
         "help": "This value is supplied by Sentis Research and represents server where the survey is hosted"
@@ -109,7 +119,27 @@ ___TEMPLATE_PARAMETERS___
         "displayName": "Asset URL",
         "simpleValueType": true,
         "defaultValue": "https://d1mxil5lo6vg2v.cloudfront.net/img/",
-        "help": "The URL Path to where the floating survey icons are stored. Defaults to the Sentis CDN"
+        "help": "The URL Path to where the floating survey icons are stored. Defaults to the Sentis CDN",
+        "valueValidators": [
+          {
+            "type": "REGEX",
+            "args": [
+              "^(https:\\/\\/).*"
+            ],
+            "errorMessage": "URL must start with https://"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "resetTimer",
+        "displayName": "Reset Timer",
+        "help": "Specify a time in minutes to re-prompt a survey if already completed or dismissed.",
+        "valueValidators": [
+          {
+            "type": "POSITIVE_NUMBER"
+          }
+        ]
       },
       {
         "type": "RADIO",
@@ -177,7 +207,16 @@ ___TEMPLATE_PARAMETERS___
         "simpleValueType": true,
         "defaultValue": "https://d1mxil5lo6vg2v.cloudfront.net/fls.js",
         "help": "The fully qualified domain name and path to the Floating Survey JavaScript file. Defaults to the Sentis CDN. If self hosting, the domain and file must be added to the Google Tag Templates \"Injects Scripts\" permissions.",
-        "notSetText": "This value is required. Please specify your self hosted file URI or set to the default Sentis CDN."
+        "notSetText": "This value is required. Please specify your self hosted file URI or set to the default Sentis CDN.",
+        "valueValidators": [
+          {
+            "type": "REGEX",
+            "args": [
+              "^(https:\\/\\/).*"
+            ],
+            "errorMessage": "URL must start with https://"
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -186,7 +225,16 @@ ___TEMPLATE_PARAMETERS___
         "simpleValueType": true,
         "defaultValue": "https://d1mxil5lo6vg2v.cloudfront.net/fls.css",
         "help": "The fully qualified domain name and path to the Floating Survey css file. Defaults to the Sentis CDN. The CSS must be paired with the JS from the same build. If you are unsure about this value, please reach out to your contact at Sentis Research. If self hosting, this file was provided.",
-        "notSetText": "This value is required. Please specify your self hosted file URI or set to the default Sentis CDN."
+        "notSetText": "This value is required. Please specify your self hosted file URI or set to the default Sentis CDN.",
+        "valueValidators": [
+          {
+            "type": "REGEX",
+            "args": [
+              "^(https:\\/\\/).*"
+            ],
+            "errorMessage": "URL must start with https://"
+          }
+        ]
       },
       {
         "type": "RADIO",
@@ -243,6 +291,7 @@ const onSuccess = () => {
         animateLauncher: data.animateLauncher,
         branded: data.branded,
         assetURL: data.assetURL,
+        resetTimer: data.resetTimer || null,
         demo: data.demo,
         styles: floatingStyles,
         title: data.title,
@@ -386,7 +435,7 @@ ___WEB_PERMISSIONS___
 ___TESTS___
 
 scenarios:
-- name: test?
+- name: Test Deployment
   code: |-
     const mockData = {
       surveyID: 12345,
