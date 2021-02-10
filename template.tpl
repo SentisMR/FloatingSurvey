@@ -191,6 +191,25 @@ ___TEMPLATE_PARAMETERS___
         ],
         "simpleValueType": true,
         "defaultValue": 0
+      },
+	  {
+        "type": "TEXT",
+        "name": "Width",
+        "displayName": "Set width of floating survey container",
+        "simpleValueType": true,
+        "alwaysInSummary": true,
+        "defaultValue": 270,
+        "valueValidators": [
+          {
+            "type": "POSITIVE_NUMBER"
+          },
+          {
+            "type": "REGEX",
+            "args": [
+              "^([2][7-9][0-9]|5[0-4][0-9]|600)$"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -295,7 +314,8 @@ const onSuccess = () => {
         demo: data.demo,
         styles: floatingStyles,
         title: data.title,
-        completed: data.completed
+        completed: data.completed,
+        width: data.width
   });
 };
 
