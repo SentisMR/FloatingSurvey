@@ -295,7 +295,8 @@ const onSuccess = () => {
         demo: data.demo,
         styles: floatingStyles,
         title: data.title,
-        completed: data.completed
+        completed: data.completed,
+        width: data.width
   });
 };
 
