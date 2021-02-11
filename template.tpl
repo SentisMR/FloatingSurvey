@@ -194,7 +194,7 @@ ___TEMPLATE_PARAMETERS___
       },
 	  {
         "type": "TEXT",
-        "name": "Width",
+        "name": "width",
         "displayName": "Set width of floating survey container",
         "simpleValueType": true,
         "alwaysInSummary": true,
