@@ -210,6 +210,38 @@ ___TEMPLATE_PARAMETERS___
             ]
           }
         ]
+      },
+	  {
+        "type": "TEXT",
+        "name": "closeIconColor",
+        "displayName": "Set close icon color",
+        "simpleValueType": true,
+        "alwaysInSummary": true,
+        "defaultValue": "#FFFFFF",
+        "valueValidators": [
+          {
+            "type": "REGEX",
+            "args": [
+              "^#(?:[0-9a-fA-F]{3}){1,2}$"
+            ]
+          }
+        ]
+      },
+	  {
+        "type": "TEXT",
+        "name": "surveyIconColor",
+        "displayName": "Set survey icon background color",
+        "simpleValueType": true,
+        "alwaysInSummary": true,
+        "defaultValue": "#4188C5",
+        "valueValidators": [
+          {
+            "type": "REGEX",
+            "args": [
+              "^#(?:[0-9a-fA-F]{3}){1,2}$"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -315,7 +347,9 @@ const onSuccess = () => {
         styles: floatingStyles,
         title: data.title,
         completed: data.completed,
-        width: data.width
+        width: data.width,
+        closeIconColor: data.closeIconColor,
+        surveyIconColor: data.surveyIconColor
   });
 };
 
