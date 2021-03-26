@@ -192,6 +192,24 @@ ___TEMPLATE_PARAMETERS___
         "simpleValueType": true,
         "defaultValue": 0
       },
+	        {
+        "type": "SELECT",
+        "name": "position",
+        "displayName": "Position",
+        "macrosInSelect": false,
+        "selectItems": [
+          {
+            "value": "left",
+            "displayValue": "Left"
+          },
+          {
+            "value": "right",
+            "displayValue": "Right"
+          }
+        ],
+        "simpleValueType": true,
+        "defaultValue": "right"
+      },
 	  {
         "type": "TEXT",
         "name": "width",
@@ -348,6 +366,7 @@ const onSuccess = () => {
         title: data.title,
         completed: data.completed,
         width: data.width,
+		position: data.position,
         closeIconColor: data.closeIconColor,
         surveyIconColor: data.surveyIconColor
   });
