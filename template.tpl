@@ -216,7 +216,7 @@ ___TEMPLATE_PARAMETERS___
         "displayName": "Set width of floating survey container",
         "simpleValueType": true,
         "alwaysInSummary": true,
-        "defaultValue": 270,
+        "defaultValue": 370,
         "valueValidators": [
           {
             "type": "POSITIVE_NUMBER"
